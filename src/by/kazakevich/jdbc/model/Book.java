@@ -60,4 +60,37 @@ public class Book extends Entity {
         ", authorId=" + authorId +
         '}';
   }
+
+  public static class Builder {
+
+    private Book book;
+
+    public Builder() {
+      book = new Book();
+    }
+
+    public Builder setTitle(String title) {
+      book.title = title;
+      return this;
+    }
+
+    public Builder setYearOfPublish(Date yearOfPublish) {
+      book.yearOfPublish = yearOfPublish;
+      return this;
+    }
+
+    public Builder setPublisher(String publisher) {
+      book.publisher = publisher;
+      return this;
+    }
+
+    public Builder setAuthorId(Integer authorId) {
+      book.authorId = authorId;
+      return this;
+    }
+
+    public Book build() {
+      return book;
+    }
+  }
 }
